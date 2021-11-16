@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter_application_1/login.dart';  
 import 'package:flutter_application_1/shop_details.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ShopDetailsScrolled extends StatefulWidget {
   const ShopDetailsScrolled({ Key key }) : super(key: key);
@@ -14,74 +15,83 @@ class _ShopDetailsScrolledState extends State<ShopDetailsScrolled> {
   Widget build(BuildContext context) {
     final data=MediaQuery.of(context);
     return Scaffold(
-              body: SingleChildScrollView(
+            body: SingleChildScrollView(
                 child: Container(
                         decoration: BoxDecoration(
                                       image: DecorationImage(
                                               image: AssetImage("Images/image 7.png"),
-                                              fit: BoxFit.cover
-                                          )
-                            ),
+                                              fit: BoxFit.fill,    
+                                     )
+                        ),
                         child: Column(
                           children: [
                               Container(
-                                margin: EdgeInsets.only(top: data.size.height/20),
+                                margin: EdgeInsets.only(top:45.h),
                                 color: Colors.transparent,
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Container(
-                                      width: data.size.width/6,
-                                      height: data.size.width/6,
-                                      decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(100),
-                                      ),
-                          
-                                      child: TextButton(
-                                        child: Image.asset("Images/Backicon.png"),
-                                        onPressed: (){
-                                           Navigator.of(context).push(MaterialPageRoute(builder: (_){
-                                              return ShopDetails();
-                             }));
-                                        },
-                                      ),
-                                ),
-                  
-                                    Container(
-                                      height: data.size.width/6,
-                                      width: data.size.width*6/8.5,
-                                      child:  Row(
-                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Container(  
-                                            width: data.size.width/6,
-                                            height: data.size.width/6,
-                                            decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(100),
-                                            ),
-                                            child: TextButton(
-                                                    child: Image.asset("Images/Favourite.png"),
-                                                    onPressed: (){},
-                                            ),
+                                         Container(
+                                          width: 80.w,
+                                          height: 80.w,
+                                          decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(100),
                                           ),
-                    
-                                          Container(
-                                            width: data.size.width/6,
-                                            height: data.size.width/6,
-                                            decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(100),
-                                            ),
-                                            child: TextButton(
-                                                    child: Image.asset("Images/Maps.png"),
-                                                    onPressed: (){},
-                                            ),
-                
-                                            ),
-                                  ],
-                                ),
-                                ),
-                              ],
+                                          child: TextButton(
+                                                  child: Image.asset("Images/Backicon.png"),
+                                                  onPressed: (){
+                                                    Navigator.of(context).push(MaterialPageRoute(builder: (_){
+                                                        return ShopDetails();
+                                                      }));
+                                                  },
+                                          ),    
+    
+                    ),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            //width: 200.w,
+                            child:  Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Container(
+                                  width: 80.w,
+                                  height: 80.w,
+                                  decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100),
+                                 ),
+                                  child: TextButton(
+                                          child: Image.asset("Images/Favourite.png"),
+                                          onPressed: (){},
+                                  ),
+                            
+                          ),
+                            
+                          Container(
+                            width: 80.w,
+                            height: 80.w,
+                           
+                            decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(100),
                             ),
+                            
+                            child: TextButton(
+                              child: Image.asset("Images/Maps.png"),
+                              onPressed: (){},
+                            ),
+                            
+                          ),
+                                          ],
+                                          ),
+                          ),
+                        ],
+                      ),
+                    ),
+                   
+                  ],
+                ),
                           ),
 
                           Container(

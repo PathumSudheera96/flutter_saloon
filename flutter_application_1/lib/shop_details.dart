@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/homepage.dart';
 import 'package:flutter_application_1/shop_details_scrolled.dart';
 //import 'homepage.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ShopDetails extends StatefulWidget {
   const ShopDetails({ Key key }) : super(key: key);
@@ -20,22 +21,24 @@ class _ShopDetailsState extends State<ShopDetails> {
           height: data.size.height,
           width: data.size.width,
           decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage("Images/serv.png"),
-                                          fit:BoxFit.cover
-                                  )
+            image: DecorationImage(
+                    image: AssetImage("Images/serv.png"),
+                    fit:BoxFit.cover
+            )
           ),
     
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: data.size.height/20),
+                width: 370.w,
+                margin: EdgeInsets.only(top:45.h),
                 color: Colors.transparent,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      width: data.size.width/6,
-                      height: data.size.width/6,
+                      width: 80.w,
+                      height: 80.w,
                      
                       decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(100),
@@ -52,78 +55,83 @@ class _ShopDetailsState extends State<ShopDetails> {
     
                     ),
                     Container(
-                      height: data.size.width/6,
-                      width: data.size.width*6/8.5,
-                      child:  Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                      width: data.size.width/6,
-                      height: data.size.width/6,
-                     
-                      decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(100),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            //width: 200.w,
+                            child:  Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Container(
+                                  width: 80.w,
+                                  height: 80.w,
+                                  decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100),
+                                 ),
+                                  child: TextButton(
+                                          child: Image.asset("Images/Favourite.png"),
+                                          onPressed: (){},
+                                  ),
+                            
+                          ),
+                            
+                          Container(
+                            width: 80.w,
+                            height: 80.w,
+                           
+                            decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(100),
+                            ),
+                            
+                            child: TextButton(
+                              child: Image.asset("Images/Maps.png"),
+                              onPressed: (){},
+                            ),
+                            
+                          ),
+                                          ],
+                                          ),
+                          ),
+                        ],
                       ),
-    
-                      child: TextButton(
-                        child: Image.asset("Images/Favourite.png"),
-                        onPressed: (){},
-                      ),
-    
-                    ),
-    
-                       Container(
-                      width: data.size.width/6,
-                      height: data.size.width/6,
-                     
-                      decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(100),
-                      ),
-    
-                      child: TextButton(
-                        child: Image.asset("Images/Maps.png"),
-                        onPressed: (){},
-                      ),
-    
-                    ),
-                      ],
-                    ),
                     ),
                    
                   ],
                 ),
               ),
+
               Container(
-                margin: EdgeInsets.only(top: data.size.height*1.2/3, left: data.size.width/30, right: data.size.width/30 ),
-                height: data.size.height/2.6,
+                margin: EdgeInsets.only(top: 255.h, left: 12.w, right: 12.w ),
+                height: 330.h,
                 decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(25)
                 ),
-    
                 child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          padding: EdgeInsets.only(top:data.size.height/40,left: data.size.width/20, right: data.size.width/20),
-                          child: Text("Hair, Facial, Nails, 2+",
+                          padding: EdgeInsets.only(top:15.h,left: 18.w, right: data.size.width/12.w),
+                          child: Text("Hair , Facial , Nails, 2+",
                                   style: TextStyle(
                                     color: Color.fromRGBO(123, 97, 255, 1),
                                     fontFamily: 'Poppins',
-                                    fontSize: 16,
+                                    fontSize: 18.sp,
                                     fontWeight: FontWeight.w400
                                   ),
                                   ),
                         ),
                         Container(
                           
-                          padding: EdgeInsets.only(top:data.size.height/40,left: data.size.width/20, right: data.size.width/20),
+                          padding: EdgeInsets.only(top:15.h,left: 18.w, right: data.size.width/12.w),
                           child: TextButton(
                             onPressed: (){},
-                            child: Text('Open', style: TextStyle(
-                              color: Colors.orange
+                            child: Text('OPEN', style: TextStyle(
+                              color: Colors.orange,
+                              fontSize: 18.sp
                             ),)
                         ),
                         ),
@@ -133,10 +141,10 @@ class _ShopDetailsState extends State<ShopDetails> {
                     ),
 
                     Container(
-                      padding: EdgeInsets.only(left: data.size.width/20, right: data.size.width/20),
+                      padding: EdgeInsets.only(top:15.h,left: 18.w, right: data.size.width/12.w),
                       alignment: Alignment.topLeft,
                       child: Text('Plush Beauty Lounge', style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 25.sp,
                         fontWeight: FontWeight.w600,
                        ),
                       ),
@@ -144,10 +152,10 @@ class _ShopDetailsState extends State<ShopDetails> {
                     ),
 
                     Container(
-                      padding: EdgeInsets.only(left: data.size.width/20, right: data.size.width/20,bottom: data.size.height/30),
+                      padding: EdgeInsets.only(bottom:15.h,left: 18.w, right: data.size.width/12.w),
                       alignment: Alignment.topLeft,
                       child: Text('360 Slillwater Rd. Palm city, Fl 34990', style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w300,
                        ),
                       ),
@@ -159,8 +167,8 @@ class _ShopDetailsState extends State<ShopDetails> {
                       children: [
                         Container(
                           alignment: Alignment.topLeft,
-                          padding: EdgeInsets.only(left:data.size.width/30,bottom: data.size.height/30) ,
-                          width:data.size.width/10,
+                          padding: EdgeInsets.only(left:12.w) ,
+                          //width:data.size.width/10,
                           child: Icon(Icons.star,
                           color: Colors.orange,
                                                 ),
@@ -168,11 +176,11 @@ class _ShopDetailsState extends State<ShopDetails> {
 
                         Container(
                           width:data.size.width/4,
-                          padding: EdgeInsets.only(right:data.size.width/30,bottom: data.size.height/30),
+                          padding: EdgeInsets.only(left: 12.w),
                           child:Text("4.8  (3.1k)",
                             style:TextStyle(
                                     color: Colors.black,
-                                    fontSize: 14,
+                                    fontSize: 15.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -182,7 +190,7 @@ class _ShopDetailsState extends State<ShopDetails> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            padding: EdgeInsets.only(bottom: data.size.height/30) ,
+                            padding: EdgeInsets.only(left: 12.w) ,
                             child: Icon(Icons.bookmark,
                             color: Color.fromRGBO(123, 97, 255, 1),
                                     ),
@@ -191,26 +199,26 @@ class _ShopDetailsState extends State<ShopDetails> {
                           Container(
                             child: Text('-58% (6 pax available)',
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.w400
                             ),),
-
-                            padding: EdgeInsets.only(bottom: data.size.height/30) ,
                         ),
                              ] ),
 
                          
                       ],
                     ),
-                   Button0()
+                   Container(
+                     padding: EdgeInsets.only(top: 20.h),
+                     child: Button0())
                   ],
                 ),
                 
               ),
               Container(
-                margin: EdgeInsets.only(top: data.size.height/40),
+                margin: EdgeInsets.only(top: 15.h),
                 child: Text('View More Details', style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 15.sp,
                   fontWeight: FontWeight.w400,
                   color: Colors.white,
                   letterSpacing: 2
@@ -265,10 +273,11 @@ class _Button0State extends State<Button0> with SingleTickerProviderStateMixin{
         end: Alignment.bottomRight
       )
     ),
-    child: Center(child: Text("Book Now",
-                          style: TextStyle(
+    child: Center(
+            child: Text("Book Now",
+                    style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 22.sp,
                             fontWeight: FontWeight.w500
                             ),
     
